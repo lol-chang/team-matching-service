@@ -3,6 +3,7 @@ package com.team.TeamProject.controller;
 
 import com.team.TeamProject.dto.MemberDto;
 import com.team.TeamProject.service.MemberService;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +21,7 @@ public class MemberController {
         return "registerHome";
     }
 
-    @GetMapping("login")
+    @GetMapping("/member/login")
     public String loginHome(){
         return "loginHome";
     }
@@ -57,6 +58,25 @@ public class MemberController {
 //        MemberService memberService = new MemberService();
         return "loginHome";
     }
+    @PostMapping("/member/login")
+    public String login(@ModelAttribute MemberDto memberDto, HttpSession session){
+        System.out.println("MemberDto.login");
+        System.out.println("memberDto = "+memberDto);
+
+        MemberDto loginResult = memberService.login(memberDto);
+        System.out.println("loginResult = "+loginResult);
+        if(loginResult != null){
+            // 로그인 성공
+            session.setAttribute("loginEmail", loginResult.getEmail());
+            return "registerHome";
+        }
+        else {
+            // 로그인 실패
+            return "loginHome";
+        }
+    }
+
+
 
 
 

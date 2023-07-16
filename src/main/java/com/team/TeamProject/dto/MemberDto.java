@@ -1,6 +1,7 @@
 package com.team.TeamProject.dto;
 
 
+import com.team.TeamProject.entity.MemberEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,5 +20,13 @@ public class MemberDto {
 
     private String password;
 
+    public static MemberDto toMemberDto(MemberEntity memberEntity){
+        MemberDto memberDto = new MemberDto();
+        memberDto.setId(memberEntity.getId());
+        memberDto.setName(memberEntity.getName());
+        memberDto.setEmail(memberEntity.getEmail());
+        memberDto.setPassword(memberEntity.getPassword());
+        return memberDto;
+    }
 
 }
