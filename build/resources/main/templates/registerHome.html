@@ -26,6 +26,44 @@
       
           <label for="psw_repeat"><b>Repeat Password</b></label>
           <input type="password" placeholder="Repeat Password" name="password_repeat" id="psw_repeat" required>
+
+            <label for="mbti"><b>MBTI (대문자)</b></label>
+            <input type="text" placeholder="EX> ENFP" name="mbti" id="mbti" required>
+
+<!--            radio로 대체 -->
+<!--            <label for="role"><b>맡고 싶은 역할 1순위</b></label>-->
+<!--            <input type="text" placeholder="EX> 팀장" name="role" id="role" required>-->
+
+<!--            input type을 number로 하면 css가 다 깨져서 text 유지  -->
+
+            <label for="project_cnt"><b>프로젝트 경험 횟수</b></label>
+            <input type="text" placeholder="EX> 2" name="project_cnt" id="project_cnt" required>
+
+            <label for="leader_cnt"><b>팀장 경험 횟수</b></label>
+            <input type="text" placeholder="EX> 1" name="leader_cnt" id="leader_cnt" required>
+
+            <label for="present_grade"><b>현재 학점</b></label>
+            <input type="text" placeholder="EX> 3.6" name="present_grade" id="present_grade" required>
+
+            <label for="target_grade"><b>목표 학점</b></label>
+            <input type="text" placeholder="EX> 4.3" name="target_grade" id="target_grade" required>
+
+
+            <p><b>맡고 싶은 역할 1순위</b></p>
+            <input type="radio" name="role_fst" value="발표" required>발표
+            <input type="radio" name="role_fst" value="자료조사" required>자료조사
+            <input type="radio" name="role_fst" value="ppt" required>ppt
+            <input type="radio" name="role_fst" value="팀장" required>팀장
+            <br>
+
+            <p><b>맡고 싶은 역할 2순위</b></p>
+            <p>(1순위랑 중복 X)</p>
+            <input type="radio" name="role_scd" value="발표" required>발표
+            <input type="radio" name="role_scd" value="자료조사" required>자료조사
+            <input type="radio" name="role_scd" value="ppt" required>ppt
+            <input type="radio" name="role_scd" value="팀장" required>팀장
+            <br>
+
           <hr>
           <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
           <button type="submit" class="registerbtn">Register</button>
