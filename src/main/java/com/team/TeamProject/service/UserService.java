@@ -31,7 +31,7 @@ public class UserService {
         PriorityQueue<UserEntity>[] roles = new PriorityQueue[4];
 
         int pointer = 0;
-        
+
 
 
 
